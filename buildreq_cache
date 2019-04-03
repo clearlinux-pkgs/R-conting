@@ -1,6 +1,9 @@
-1.6.1
+1.7
 R-BMS
 R-coda
 R-gtools
 R-mvtnorm
+R-quadprog
+R-quantmod
 R-tseries
+R-zoo
