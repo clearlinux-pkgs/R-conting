@@ -4,7 +4,7 @@
 #
 Name     : R-conting
 Version  : 1.7
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/conting_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/conting_1.7.tar.gz
 Summary  : Bayesian Analysis of Contingency Tables
@@ -14,10 +14,7 @@ Requires: R-BMS
 Requires: R-coda
 Requires: R-gtools
 Requires: R-mvtnorm
-Requires: R-quadprog
-Requires: R-quantmod
 Requires: R-tseries
-Requires: R-zoo
 BuildRequires : R-BMS
 BuildRequires : R-coda
 BuildRequires : R-gtools
@@ -27,6 +24,7 @@ BuildRequires : R-quantmod
 BuildRequires : R-tseries
 BuildRequires : R-zoo
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -38,13 +36,13 @@ No detailed description available
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1554253941
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571812879
 
 %install
-export SOURCE_DATE_EPOCH=1554253941
+export SOURCE_DATE_EPOCH=1571812879
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,7 +71,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
