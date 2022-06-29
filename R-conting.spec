@@ -4,7 +4,7 @@
 #
 Name     : R-conting
 Version  : 1.7
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/conting_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/conting_1.7.tar.gz
 Summary  : Bayesian Analysis of Contingency Tables
